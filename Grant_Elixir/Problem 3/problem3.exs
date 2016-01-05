@@ -1,8 +1,8 @@
-content = 
+input = 
     case System.argv() do
         ["-f"|filename] -> 
             {:ok, text} = File.read "#{filename}"
-            text
+            String.strip(text)
         [_|[text|_]] -> text
     end
 
@@ -12,7 +12,7 @@ complements =
        "A" => "T",
        "T" => "A"}
       
-content 
+input 
 |> String.reverse 
 |> String.codepoints
 |> Enum.map(fn(item) -> complements[item] end)
