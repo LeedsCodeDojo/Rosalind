@@ -11,9 +11,9 @@ In 1202, Leonardo of Pisa (commonly known as Fibonacci) considered a mathematica
 * Exactly one month after two rabbits mate, they produce one male and one female rabbit.
 * Rabbits never die or stop reproducing.
 
-## Sequences and Recurrence Relations
-
 Fibonacci's exercise was to calculate how many pairs of rabbits would remain in one year. We can see that in the second month, the first pair of rabbits reach reproductive age and mate. In the third month, another pair of rabbits is born, and we have two rabbit pairs; our first pair of rabbits mates again. In the fourth month, another pair of rabbits is born to the original pair, while the second pair reach maturity and mate (with three total pairs).
+
+## Background: Sequences and Recurrence Relations
 
 A sequence is an ordered collection of objects (usually numbers), which are allowed to repeat. Sequences can be finite or infinite. Two examples are the finite sequence (PI,-2,0,PI) and the infinite sequence of odd numbers (1,3,5,7,9,…). We use the notation a<sub>n</sub> to represent the n-th term of a sequence.
 
