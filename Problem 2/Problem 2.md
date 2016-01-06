@@ -16,3 +16,5 @@ Given a DNA string t corresponding to a coding strand, its transcribed RNA strin
 ###Sample Output
 
     GAUGGAACUUGACUACGUAAAUU
+
+*Note*: This is rather easy to achieve with a simple string replacement, so to make it a bit more challenging you might want to implement it yourself using, for instance, iteration or recursion over the list of characters.
