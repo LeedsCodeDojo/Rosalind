@@ -1,0 +1,3 @@
+[submodule "shared/tclap"]
+	path = shared/tclap
+	url = https://github.com/cmaughan/tclap.git
