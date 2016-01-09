@@ -1,4 +1,4 @@
-from itertools import ifilterfalse
+from itertools import takewhile
 
 # Table which maps Codons to Proteins
 rnaCoding = {'ACC': 'T', 'GCA': 'A', 'AAG': 'K', 'AAA': 'K', 'GUU': 'V', 'AAC': 'N', 'AGG': 'R', 'UGG': 'W', 'GUC': 'V',
@@ -21,5 +21,5 @@ def rnaTranslation(rna):
         """
         for i in xrange(0,len(rna),3):
             yield rnaCoding[rna[i:i+3]]
-    return ''.join(ifilterfalse(lambda x: x=='STOP', translateCodons(rna)))
+    return ''.join(takewhile(lambda x: x!='STOP', translateCodons(rna)))
         

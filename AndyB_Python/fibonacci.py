@@ -14,28 +14,23 @@ def fibonacciDynamic(n, multiplier=1):
     """
     Generate Fibonacci Sequence
     NB Uses Dynamic programming
-    Crude implememntation could be more elegantly written as map + lambda
     """
-    fib_table = []
-    for i in range(n):
-        if i < 2:
-            fib_table.append(1)
-        else:
-            fib_table.append(fib_table[-1] + fib_table[-2]*multiplier)
-    return fib_table[-1]
+    def processGeneration(populationHistory,generationCount):
+        generationSize = populationHistory[-1] + populationHistory[-2] * multiplier
+        populationHistory.append(generationSize)
+        return populationHistory[1:]
+    initialPopulation = [0,1]
+    return reduce(processGeneration, xrange(n-1), initialPopulation)[-1]
 
 def mortalFibonacci(n, lifespan):
     """
     Generate Fibonacci Sequence with Lifespan
-    NB Uses Dynamic programming
-    Crude implememntation could be more elegantly written as map + lambda
+    NB Uses Dynamic programming so that sufficent generations are held in list
+    Last element of returned list contains the final generation
     """
-    fib_table = []
-    deaths = ([0] * (lifespan-2)) + [1] 
-    for i in range(n):
-        if i < 2:
-            fib_table.append(1)
-        else:
-            fib_table.append(fib_table[-1] + fib_table[-2]-deaths[0])
-            deaths = deaths[1:] + [fib_table[-3]]
-    return fib_table[-1]
+    def processGeneration(populationHistory,generationCount):
+        generationSize = populationHistory[-1] + populationHistory[-2] - populationHistory[0]
+        populationHistory.append(generationSize)
+        return populationHistory[1:]
+    initialPopulation = ([0] * (lifespan-1)) + [1]
+    return reduce(processGeneration, xrange(n), initialPopulation)[-1]

@@ -1,5 +1,15 @@
+"""
+
+"""
+
 
 def read_fasta(fp):
+    """
+    Read a FASTA file containing 1 or more sequences of DNA or Peptides.
+    Each Sequence has a name and then 1 or more lines of DNA/Peptides
+
+    Returns a generatot
+    """
     name, seq = None, []
     for line in fp:
         line = line.rstrip()
