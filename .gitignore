@@ -192,3 +192,6 @@ erl_crash.dump
 # NuGet
 packages/
 *.iml
+*.project
+.pydevproject
+*.pyc
